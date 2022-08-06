@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6BBFF8F62899938900548705 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBFF8F52899938900548705 /* StartScreenView.swift */; };
 		6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */; };
 		6BF8A06228971FFD00B47E37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8A06128971FFD00B47E37 /* ContentView.swift */; };
 		6BF8A06428971FFE00B47E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A06328971FFE00B47E37 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6BBFF8F52899938900548705 /* StartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
 		6BF8A05C28971FFD00B47E37 /* Bottle Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bottle Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottle_GameApp.swift; sourceTree = "<group>"; };
 		6BF8A06128971FFD00B47E37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */,
 				6BF8A06128971FFD00B47E37 /* ContentView.swift */,
+				6BBFF8F52899938900548705 /* StartScreenView.swift */,
 				6BF8A06328971FFE00B47E37 /* Assets.xcassets */,
 				6BF8A06528971FFE00B47E37 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BBFF8F62899938900548705 /* StartScreenView.swift in Sources */,
 				6BF8A06228971FFD00B47E37 /* ContentView.swift in Sources */,
 				6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */,
 			);
@@ -417,6 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bottle Game/Preview Content\"";
+				DEVELOPMENT_TEAM = 7X87RPFKRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -445,6 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bottle Game/Preview Content\"";
+				DEVELOPMENT_TEAM = 7X87RPFKRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

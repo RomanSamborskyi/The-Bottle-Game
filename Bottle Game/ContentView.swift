@@ -31,20 +31,26 @@ struct ContentView: View {
                     .frame(width: 80, height: 200)
                     .rotationEffect(.degrees(isRotated))
                     .padding(100)
-                Button("SPIN"){
+                Button(action:{
                     let d = Double.random(in: 720...7200)
                     let baseAnimation = Animation.easeInOut(duration: d / 660)
                         withAnimation (baseAnimation) {
                         self.isRotated += d
-                        
-                    }
-                
+                        }
+                }){
+                    Text("SPIN")
+                        .padding()
+                        .font(.title)
+                        .foregroundColor(.black)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.white,Color.gray,Color.white]), startPoint: .topLeading, endPoint:. bottomTrailing))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .shadow(color: .black, radius: 10)
                 }
-                .padding()
-                .font(.title)
-                .background(LinearGradient(gradient: Gradient(colors: [Color.white,Color.gray,Color.white]), startPoint: .topLeading, endPoint:. bottomTrailing))
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-               
+            }
+            
+            VStack{
+                Spacer()
+                    Text("made by @Roman Samborskyi")
                 
             }
         }
