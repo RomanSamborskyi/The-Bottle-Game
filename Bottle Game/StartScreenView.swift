@@ -15,10 +15,9 @@ struct StartScreenView: View {
             ContentView()
         }else{
         ZStack{
-        LinearGradient(gradient:Gradient(colors: [Color.blue,
-                                                  Color.red,
-                                                  Color.purple,
-                                                  Color.pink
+        LinearGradient(gradient:Gradient(colors: [Color.white,
+                                                  Color.blue,
+                                                  Color.white
                                                  ]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing
