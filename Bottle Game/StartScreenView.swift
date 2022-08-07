@@ -9,12 +9,13 @@ import SwiftUI
 
 struct StartScreenView: View {
     @State private var changeView = false
+   
     
     var body: some View {
         if changeView{
             ContentView()
         }else{
-        ZStack{
+            ZStack{
         LinearGradient(gradient:Gradient(colors: [Color.white,
                                                   Color.blue,
                                                   Color.white
@@ -28,12 +29,12 @@ struct StartScreenView: View {
                     .font(.custom("Savoye LET", size: 90))
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                    .padding(90)
+                    .padding(113)
                 
                 Button(action:{
-                    //code
+                    withAnimation(.easeOut(duration: 0.5)){
                     self.changeView.toggle()
-                
+                    }
                 }){
                     Text("START")
                         .padding()
@@ -42,11 +43,11 @@ struct StartScreenView: View {
                         .background(LinearGradient(gradient: Gradient(colors: [Color.white,Color.gray,Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing))
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                         .shadow(color: Color.black, radius: 10)
-                    
-                        }
+                }
             
                 Spacer()
                 Text("made by @Roman Samborskyi")
+                    .foregroundColor(Color.black)
                 
                }
             }

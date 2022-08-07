@@ -42,7 +42,7 @@ struct ContentView: View {
                         .font(.title)
                         .foregroundColor(.black)
                         .background(LinearGradient(gradient: Gradient(colors: [Color.white,Color.gray,Color.white]), startPoint: .topLeading, endPoint:. bottomTrailing))
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
                         .shadow(color: .black, radius: 10)
                 }
             }
@@ -50,7 +50,7 @@ struct ContentView: View {
             VStack{
                 Spacer()
                     Text("made by @Roman Samborskyi")
-                
+                    .foregroundColor(Color.black)
             }
         }
     }
