@@ -11,7 +11,7 @@ import SwiftUI
 struct Bottle_GameApp: App {
     var body: some Scene {
         WindowGroup {
-            StartScreenView()
+           StartAppView()
         }
     }
 }

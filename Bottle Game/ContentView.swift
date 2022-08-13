@@ -7,15 +7,23 @@
 
 import SwiftUI
 
+class HapticEngine {
+    //Haptic feadback engine
+    static let impact = HapticEngine()
+        func imapct(style: UIImpactFeedbackGenerator.FeedbackStyle){
+        let generator = UIImpactFeedbackGenerator(style: style)
+        generator.impactOccurred()
+    }
+}
 struct ContentView: View {
+    
     @State private var isRotated = 0.0
     var animation: Animation {
         Animation.easeIn
     }
-    
     var body: some View {
-        
         ZStack{
+            //Background gradient
             LinearGradient(gradient:Gradient(colors: [
                 Color.white,
                 Color.blue,
@@ -24,32 +32,34 @@ struct ContentView: View {
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing
             ).ignoresSafeArea(.all,edges: .all)
+            
             VStack{
                 Image("bottle")
                     .resizable()
                     .frame(width: 80, height: 200)
                     .rotationEffect(.degrees(isRotated))
                     .padding(100)
+                //Rotate button of bottle
                 Button(action:{
-                    let d = Double.random(in: 720...7200)
+                    HapticEngine.impact.imapct(style: .soft) // vibrate
+                    let d = Double.random(in: 720...7200) // random stop of animation
                     let baseAnimation = Animation.easeInOut(duration: d / 660)
                         withAnimation (baseAnimation) {
                         self.isRotated += d
                         }
                 }){
-                    Text("SPIN")
+                    Image(systemName: "arrow.triangle.2.circlepath")
                         .padding()
                         .font(.title)
                         .foregroundColor(.black)
                         .background(LinearGradient(gradient: Gradient(colors: [Color.white,Color.gray,Color.white]), startPoint: .topLeading, endPoint:. bottomTrailing))
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .clipShape(Circle())
                         .shadow(color: .black, radius: 10)
                 }
             }
-            
             VStack{
                 Spacer()
-                    Text("made by @Roman Samborskyi")
+                    Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
                     .foregroundColor(Color.black)
             }
         }
