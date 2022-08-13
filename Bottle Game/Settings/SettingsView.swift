@@ -9,11 +9,15 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        VStack{
+        NavigationView{
             Form{
-                Text("About this app")
-                    .font(.headline)
-            }
+                Section{
+                NavigationLink("About this app", destination: AbotAppView())
+                }
+                Section{
+                   
+                }
+            }.navigationTitle("Settings")
         }
     }
 }
