@@ -22,6 +22,7 @@ struct ContentView: View {
         Animation.easeIn
     }
     var body: some View {
+        
         ZStack{
             //Background gradient
             LinearGradient(gradient:Gradient(colors: [
@@ -51,20 +52,20 @@ struct ContentView: View {
                     Image(systemName: "arrow.triangle.2.circlepath")
                         .padding()
                         .font(.title)
-                        .foregroundColor(.black)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.white,Color.gray,Color.white]), startPoint: .topLeading, endPoint:. bottomTrailing))
-                        .clipShape(Circle())
-                        .shadow(color: .black, radius: 10)
+                        .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
+                        .background(Circle().stroke(lineWidth: 2))
+                        .shadow(color: .black, radius: 3)
                 }
             }
             VStack{
                 Spacer()
                     Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color.blue)
             }
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
