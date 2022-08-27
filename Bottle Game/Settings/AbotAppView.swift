@@ -19,14 +19,14 @@ struct AbotAppView: View {
             .shadow(color: Color.black, radius: 10)
             .padding()
             .animation(Animation.easeInOut(duration: 1))
-       
+                
             Text("Hello, my name is Roman Samborskyi.I am passionate about programming and just learning it.This application is my first app.This is a simple game, bottle.So enjoy it")
                 .font(.callout)
                 .padding()
                 .animation(Animation.easeIn(duration: 2))
                 }
             }
-        }.navigationTitle("About this app")
+        }
     }
 }
 

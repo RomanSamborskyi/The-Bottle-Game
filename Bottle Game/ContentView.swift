@@ -16,19 +16,17 @@ class HapticEngine {
     }
 }
 struct ContentView: View {
-    
     @State private var isRotated = 0.0
     var animation: Animation {
         Animation.easeIn
     }
     var body: some View {
-        
         ZStack{
             //Background gradient
-            LinearGradient(gradient:Gradient(colors: [
-                Color.white,
+        LinearGradient(gradient:Gradient(colors: [
+                Color.black,
                 Color.blue,
-                Color.white,
+                Color.black,
             ]),
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing
@@ -53,15 +51,16 @@ struct ContentView: View {
                         .padding()
                         .font(.title)
                         .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
-                        .background(Circle().stroke(lineWidth: 2))
+                        .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
                         .shadow(color: .black, radius: 3)
                 }
             }
             VStack{
                 Spacer()
                     Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
-                    .foregroundColor(Color.blue)
-            }
+                    .foregroundColor(Color.gray)
+               }
+        //.navigationBarItems(trailing: Button(action:{appState.chahgeView = true  }){Image(systemName: "arrow.right")})
         }
     }
 }

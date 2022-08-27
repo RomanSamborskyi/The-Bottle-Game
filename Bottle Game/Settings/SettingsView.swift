@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         NavigationView{
+           
             Form{
                 Section{
                 NavigationLink("About this app", destination: AbotAppView())
@@ -18,6 +19,7 @@ struct SettingsView: View {
                    
                 }
             }.navigationTitle("Settings")
+                //.navigationBarItems(leading: Button(action:{ appState.chahgeView = false }){Image(systemName: "arrow.left")})
         }
     }
 }
