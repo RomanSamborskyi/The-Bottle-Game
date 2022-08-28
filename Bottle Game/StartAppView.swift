@@ -19,7 +19,7 @@ struct StartAppView: View {
             ContentView()
         }else{
         ZStack{
-            LinearGradient(gradient: Gradient(colors: [Color.white,Color.blue,Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [Color.black,Color.blue,Color.black]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea(.all, edges: .all)
             Image("bottle")
                 .resizable()
