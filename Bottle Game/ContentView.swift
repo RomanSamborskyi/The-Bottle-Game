@@ -17,6 +17,8 @@ class HapticEngine {
 }
 struct ContentView: View {
     @State private var isRotated = 0.0
+    @State var showSettings: Bool = false
+    
     var animation: Animation {
         Animation.easeIn
     }
@@ -57,11 +59,15 @@ struct ContentView: View {
             }
             VStack{
                 Spacer()
+            Button( action: {
+                showSettings.toggle()
+            }){
                     Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
                     .foregroundColor(Color.gray)
-               }
-        //.navigationBarItems(trailing: Button(action:{appState.chahgeView = true  }){Image(systemName: "arrow.right")})
+                }
+            }
         }
+        .sheet(isPresented: $showSettings, content:{ AbotAppView()})
     }
 }
 

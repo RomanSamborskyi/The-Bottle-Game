@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B28E06028A7BBC5005E9F04 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B28E05F28A7BBC5005E9F04 /* SettingsView.swift */; };
 		6B979A4428A83648001A97C4 /* AbotAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979A4328A83648001A97C4 /* AbotAppView.swift */; };
 		6B9848AB28A2D1370039B650 /* StartAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9848AA28A2D1370039B650 /* StartAppView.swift */; };
 		6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B28E05F28A7BBC5005E9F04 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6B979A4328A83648001A97C4 /* AbotAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbotAppView.swift; sourceTree = "<group>"; };
 		6B9848AA28A2D1370039B650 /* StartAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppView.swift; sourceTree = "<group>"; };
 		6BF8A05C28971FFD00B47E37 /* Bottle Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bottle Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +78,6 @@
 		6B979A4228A8339C001A97C4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				6B28E05F28A7BBC5005E9F04 /* SettingsView.swift */,
 				6B979A4328A83648001A97C4 /* AbotAppView.swift */,
 			);
 			path = Settings;
@@ -276,7 +273,6 @@
 			files = (
 				6B979A4428A83648001A97C4 /* AbotAppView.swift in Sources */,
 				6BF8A06228971FFD00B47E37 /* ContentView.swift in Sources */,
-				6B28E06028A7BBC5005E9F04 /* SettingsView.swift in Sources */,
 				6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */,
 				6B9848AB28A2D1370039B650 /* StartAppView.swift in Sources */,
 			);
