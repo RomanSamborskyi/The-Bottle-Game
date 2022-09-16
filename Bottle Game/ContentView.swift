@@ -18,6 +18,7 @@ class HapticEngine {
 struct ContentView: View {
     @State private var isRotated = 0.0
     @State var showSettings: Bool = false
+    @State var animatedButton: Bool = false
     
     var animation: Animation {
         Animation.easeIn
@@ -54,20 +55,27 @@ struct ContentView: View {
                         .font(.title)
                         .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                         .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
-                        .shadow(color: .black, radius: 3)
-                }
+                        .shadow(color: .black, radius: animatedButton ? 5 : 10, x: 0, y: animatedButton ? 30 : 10)
+                }.scaleEffect(animatedButton ? 1.15 : 1.0)
             }
+            .onAppear(perform: animatedBuuton)
             VStack{
                 Spacer()
             Button( action: {
                 showSettings.toggle()
             }){
-                    Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
+                Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
                     .foregroundColor(Color.gray)
                 }
             }
         }
         .sheet(isPresented: $showSettings, content:{ AbotAppView()})
+    }
+    func animatedBuuton(){
+        guard !animatedButton else {return}
+        withAnimation(Animation.easeInOut(duration: 2.0).repeatForever()){
+            animatedButton.toggle()
+        }
     }
 }
 

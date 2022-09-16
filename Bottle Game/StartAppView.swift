@@ -14,6 +14,7 @@ struct StartAppView: View {
     @State private var isRottated = true
     @State private var isRottate:Int = 0
     
+    
     var body: some View {
         if isRottate >= 3{
             ContentView()

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AbotAppView: View {
     @Environment (\.colorScheme) var colorSheme
+    
     var body: some View {
         ZStack{
            VStack{

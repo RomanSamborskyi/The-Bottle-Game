@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct Bottle_GameApp: App {
     var body: some Scene {
-        WindowGroup {
-                StartAppView()
+            WindowGroup {
+                    StartAppView()
         }
     }
 }
