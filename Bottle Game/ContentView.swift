@@ -55,10 +55,9 @@ struct ContentView: View {
                         .font(.title)
                         .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                         .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
-                        .shadow(color: .black, radius: animatedButton ? 5 : 10, x: 0, y: animatedButton ? 30 : 10)
+                        .shadow(color: .black, radius: 10, x: 0, y: animatedButton ? 30 : 10)
                 }.scaleEffect(animatedButton ? 1.15 : 1.0)
-            }
-            .onAppear(perform: animatedBuuton)
+            }.onAppear(perform: animatedBuuton)
             VStack{
                 Spacer()
             Button( action: {
@@ -73,8 +72,10 @@ struct ContentView: View {
     }
     func animatedBuuton(){
         guard !animatedButton else {return}
-        withAnimation(Animation.easeInOut(duration: 2.0).repeatForever()){
-            animatedButton.toggle()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
+            withAnimation(Animation.easeInOut(duration: 2.0).repeatForever()){
+                animatedButton.toggle()
+            }
         }
     }
 }
