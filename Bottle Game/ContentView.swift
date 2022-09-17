@@ -19,17 +19,21 @@ struct ContentView: View {
     @State private var isRotated = 0.0
     @State var showSettings: Bool = false
     @State var animatedButton: Bool = false
-    
+    @Environment (\.colorScheme) var colorscheme
     var animation: Animation {
         Animation.easeIn
     }
     var body: some View {
         ZStack{
             //Background gradient
-        LinearGradient(gradient:Gradient(colors: [
+            LinearGradient(gradient: colorscheme == .dark ? Gradient(colors: [
                 Color.black,
                 Color.blue,
                 Color.black,
+            ]) : Gradient(colors: [
+                Color.white,
+                Color.blue,
+                Color.white,
             ]),
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing
@@ -55,8 +59,9 @@ struct ContentView: View {
                         .font(.title)
                         .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                         .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
-                        .shadow(color: .black, radius: 10, x: 0, y: animatedButton ? 30 : 10)
-                }.scaleEffect(animatedButton ? 1.15 : 1.0)
+                        .shadow(color: colorscheme == .light ? .blue : .black, radius:animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
+                        .scaleEffect(animatedButton ? 1.15 : 1.0)
+                }
             }.onAppear(perform: animatedBuuton)
             VStack{
                 Spacer()

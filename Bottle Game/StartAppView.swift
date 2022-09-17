@@ -13,15 +13,25 @@ struct StartAppView: View {
     @State private var changeView = false
     @State private var isRottated = true
     @State private var isRottate:Int = 0
-    
+    @Environment (\.colorScheme) var colorscheme
     
     var body: some View {
         if isRottate >= 3{
             ContentView()
         }else{
         ZStack{
-            LinearGradient(gradient: Gradient(colors: [Color.black,Color.blue,Color.black]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                .ignoresSafeArea(.all, edges: .all)
+            LinearGradient(gradient: colorscheme == .dark ? Gradient(colors: [
+                Color.black,
+                Color.blue,
+                Color.black,
+            ]) : Gradient(colors: [
+                Color.white,
+                Color.blue,
+                Color.white,
+            ]),
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing
+            ).ignoresSafeArea(.all,edges: .all)
             Image("bottle")
                 .resizable()
                 .frame(width: 75, height: 200)

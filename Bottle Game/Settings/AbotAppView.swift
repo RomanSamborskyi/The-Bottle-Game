@@ -9,17 +9,21 @@ import SwiftUI
 
 struct AbotAppView: View {
     @State var animatedButton : Bool = false
-    
+    @Environment (\.colorScheme) var colorscheme
     var body: some View {
         ZStack{
-            LinearGradient(gradient:Gradient(colors: [
-                    Color.black,
-                    Color.blue,
-                    Color.black,
-                ]),
-                               startPoint: .topLeading,
-                               endPoint: .bottomTrailing
-                ).ignoresSafeArea(.all,edges: .all)
+            LinearGradient(gradient: colorscheme == .dark ? Gradient(colors: [
+                Color.black,
+                Color.blue,
+                Color.black,
+            ]) : Gradient(colors: [
+                Color.white,
+                Color.blue,
+                Color.white,
+            ]),
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing
+            ).ignoresSafeArea(.all,edges: .all)
            VStack{
         Image("me")
             .resizable()
@@ -30,13 +34,13 @@ struct AbotAppView: View {
             
             Text("Hello 👋, my name is Roman Samborskyi and I'm passionate about programming and just learning it 📖This application is my first app.This is a simple game, bottle.So enjoy it 😉")
                 .font(.callout)
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color.black)
                 .bold()
                 .padding()
             
                Text("If you enjoy this app, you can by me a cup of coffee ☕️")
                    .font(.callout)
-                   .foregroundColor(Color.gray)
+                   .foregroundColor(Color.black)
                    .bold()
                    .padding()
                   
@@ -53,14 +57,14 @@ struct AbotAppView: View {
                             .font(.body)
                             .foregroundColor(Color.black)
                             .bold()
-                        }.shadow(color: Color.black, radius: 10, x: 0, y: animatedButton ? 40 : 0)
+                        }.shadow(color: colorscheme == . light ? .blue : .black, radius: animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
                             .scaleEffect(animatedButton ? 1.15 : 1.0)
                     }.padding(40)
                      
                     
                Text("Also you can connect with me by email 📧")
                    .font(.body)
-                   .foregroundColor(Color.gray)
+                   .foregroundColor(Color.black)
                    .bold()
                    .padding(10)
                Text("r.samborskyi@gmail.com")
