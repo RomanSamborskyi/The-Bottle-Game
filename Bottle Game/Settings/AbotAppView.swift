@@ -50,12 +50,12 @@ struct AbotAppView: View {
                         ZStack{
                             RoundedRectangle(cornerRadius: 12)
                                 .stroke(lineWidth: 3)
-                                .foregroundColor(Color.teal)
+                                .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                                 .frame(width: 110, height: 55, alignment: .center)
                                 
                         Text("$ 1.00")
                             .font(.body)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                             .bold()
                         }.shadow(color: colorscheme == . light ? .blue : .black, radius: animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
                             .scaleEffect(animatedButton ? 1.15 : 1.0)
@@ -76,7 +76,7 @@ struct AbotAppView: View {
     }
     func animatedButtonFunc(){
         guard !animatedButton else {return}
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             withAnimation(Animation.easeInOut(duration: 2.0).repeatForever()){
                 animatedButton.toggle()
             }

@@ -20,9 +20,7 @@ struct ContentView: View {
     @State var showSettings: Bool = false
     @State var animatedButton: Bool = false
     @Environment (\.colorScheme) var colorscheme
-    var animation: Animation {
-        Animation.easeIn
-    }
+  
     var body: some View {
         ZStack{
             //Background gradient
@@ -59,7 +57,7 @@ struct ContentView: View {
                         .font(.title)
                         .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                         .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 2))
-                        .shadow(color: colorscheme == .light ? .blue : .black, radius:animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
+                        .shadow(color: colorscheme == .light ? .blue : .black, radius:animatedButton ? 10 : 45, x: 0, y: animatedButton ? 30 : 0)
                         .scaleEffect(animatedButton ? 1.15 : 1.0)
                 }
             }.onAppear(perform: animatedBuuton)
@@ -77,7 +75,7 @@ struct ContentView: View {
     }
     func animatedBuuton(){
         guard !animatedButton else {return}
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
             withAnimation(Animation.easeInOut(duration: 2.0).repeatForever()){
                 animatedButton.toggle()
             }
