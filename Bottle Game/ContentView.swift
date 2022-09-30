@@ -64,7 +64,7 @@ struct ContentView: View {
                 }
             }.onAppear(perform: animatedBuuton)
             VStack{
-             Spacer()
+               Spacer()
                 
             Button( action: {
                 showSettings.toggle()
@@ -72,9 +72,10 @@ struct ContentView: View {
                 Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
                     .foregroundColor(Color.gray)
                 }
-            }
+              }
            }.sheet(isPresented: $showSettings, content:{ AbotAppView()})
                 .navigationTitle("")
+            // Dark mode switch button in navBar
                 .navigationBarItems(leading: Button(action:{
                     isDark.toggle()
                 }){
@@ -83,6 +84,7 @@ struct ContentView: View {
                 }.buttonStyle(.bordered).tint(isDark ? .gray : .blue))
         }.environment(\.colorScheme, isDark ? .dark : .light)
 }
+    // animation func
     func animatedBuuton(){
         guard !animatedButton else {return}
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){

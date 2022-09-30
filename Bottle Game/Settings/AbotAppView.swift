@@ -59,7 +59,7 @@ struct AbotAppView: View {
                                 .font(.body)
                                 .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                                 .bold()
-                        }.shadow(color: colorScheme == . light ? .blue : .black, radius: animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
+                        }.shadow(color: isDark ? .black : .blue, radius: animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
                             .scaleEffect(animatedButton ? 1.15 : 1.0)
                     }.padding(40)
                     
