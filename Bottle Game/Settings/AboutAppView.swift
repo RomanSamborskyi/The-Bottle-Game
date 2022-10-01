@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AbotAppView: View {
+struct AboutAppView: View {
     @State var animatedButton : Bool = false
     @Environment (\.colorScheme) var colorScheme
     @AppStorage("isDark") private var isDark = false
@@ -88,9 +88,9 @@ struct AbotAppView: View {
     }
 }
 
-struct AbotAppView_Previews: PreviewProvider {
+struct AboutAppView_Previews: PreviewProvider {
     static var previews: some View {
-        AbotAppView()
+        AboutAppView()
                 .preferredColorScheme(.light)
     }
 }

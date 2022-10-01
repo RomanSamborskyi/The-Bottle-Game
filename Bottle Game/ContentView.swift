@@ -54,10 +54,9 @@ struct ContentView: View {
                         withAnimation (baseAnimation) {
                         self.isRotated += d
                         }
-                    withAnimation(Animation.easeIn(duration: 2).repeatCount(1)){isTapped.toggle()}
                 }){
                     Image(systemName: "arrow.triangle.2.circlepath")
-                        .rotationEffect(Angle(degrees: isTapped ? 360 : 0))
+                        .rotationEffect(.degrees(isRotated))
                         .padding()
                         .font(.title)
                         .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
@@ -77,7 +76,7 @@ struct ContentView: View {
                     .foregroundColor(Color.gray)
                 }
               }
-           }.sheet(isPresented: $showSettings, content:{ AbotAppView()})
+           }.sheet(isPresented: $showSettings, content:{ AboutAppView()})
                 .navigationTitle("")
             // Dark mode switch button in navBar
                 .navigationBarItems(leading: Button(action:{
