@@ -21,7 +21,6 @@ struct StartAppView: View {
             if isRottate >= 3{
                 ContentView()
             }else{
-                NavigationView{
                 ZStack{
                     LinearGradient(gradient: isDark ? Gradient(colors: [
                         Color.black,
@@ -53,11 +52,10 @@ struct StartAppView: View {
                             withAnimation(Animation.linear(duration: 1).delay(1).repeatCount(1))
                             {self.strokeEndAnimation.toggle(); isRottate += 1}
                         }
-                }
-            }.environment(\.colorScheme, isDark ? .dark : .light)
+                }.environment(\.colorScheme, isDark ? .dark : .light)
+            }
         }
     }
-}
 struct StartAppView_Previews: PreviewProvider {
     static var previews: some View {
         StartAppView()

@@ -11,7 +11,9 @@ import SwiftUI
 struct Bottle_GameApp: App {
     var body: some Scene {
             WindowGroup {
+                NavigationView{
                     StartAppView()
+                }.navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

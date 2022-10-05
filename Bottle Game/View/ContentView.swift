@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 class HapticEngine {
     //Haptic feadback engine
@@ -15,17 +16,17 @@ class HapticEngine {
         generator.impactOccurred()
     }
 }
+
+
 struct ContentView: View {
     @State private var isRotated = 0.0
     @State var showSettings: Bool = false
     @State var animatedButton: Bool = false
-    @State private var isTapped: Bool = false
     @Environment (\.colorScheme) var colorScheme
     @AppStorage("isDark") private var isDark = false
     
     var body: some View {
-        NavigationView{
-           ZStack{
+        ZStack{
             //Background gradient
             LinearGradient(gradient: isDark ? Gradient(colors: [
                 Color.black,
@@ -51,9 +52,9 @@ struct ContentView: View {
                     HapticEngine.impact.imapct(style: .medium) // vibrate
                     let d = Double.random(in: 720...7200) // random stop of animation
                     let baseAnimation = Animation.easeInOut(duration: d / 660)
-                        withAnimation (baseAnimation) {
+                    withAnimation (baseAnimation) {
                         self.isRotated += d
-                        }
+                    }
                 }){
                     Image(systemName: "arrow.triangle.2.circlepath")
                         .rotationEffect(.degrees(isRotated))
@@ -66,28 +67,24 @@ struct ContentView: View {
                 }
             }.onAppear(perform: animatedBuuton)
             VStack{
-               Spacer()
-                
-            Button( action: {
-                showSettings.toggle()
-                HapticEngine.impact.imapct(style: .light)
+                Spacer()
+
+                    Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
+                        .foregroundColor(Color.gray)
+            }
+        }
+            .navigationTitle("")
+        // Dark mode switch button in navBar
+            .navigationBarItems(trailing: NavigationLink(destination: SettingsView(), label: {Image(systemName: "slider.horizontal.3").foregroundColor(isDark ? .gray : .blue)}))
+            .navigationBarItems(leading: Button(action:{
+                HapticEngine.impact.imapct(style: .medium)
+                isDark.toggle()
             }){
-                Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
-                    .foregroundColor(Color.gray)
-                }
-              }
-           }.sheet(isPresented: $showSettings, content:{ AboutAppView()})
-                .navigationTitle("")
-            // Dark mode switch button in navBar
-                .navigationBarItems(leading: Button(action:{
-                    HapticEngine.impact.imapct(style: .rigid)
-                    isDark.toggle()
-                }){
-                    Text(Image(systemName: isDark ? "moon.fill" : "sun.max.fill"))
-                        .foregroundColor(isDark ? Color.purple : Color.yellow)
-                }.buttonStyle(.bordered).tint(isDark ? .gray : .blue))
-        }.environment(\.colorScheme, isDark ? .dark : .light)
-     }
+                Text(Image(systemName: isDark ? "moon.fill":"sun.max.fill"))
+                    .foregroundColor(isDark ? Color.purple : Color.yellow)
+            }.buttonStyle(.bordered).tint(isDark ? .gray : .blue))
+            .environment(\.colorScheme, isDark ? .dark : .light)
+    }
     // animation func
     func animatedBuuton(){
         guard !animatedButton else {return}
