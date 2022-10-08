@@ -16,8 +16,6 @@ class HapticEngine {
         generator.impactOccurred()
     }
 }
-
-
 struct ContentView: View {
     @State private var isRotated = 0.0
     @State var showSettings: Bool = false
@@ -75,7 +73,7 @@ struct ContentView: View {
         }
             .navigationTitle("")
         // Dark mode switch button in navBar
-            .navigationBarItems(trailing: NavigationLink(destination: SettingsView(), label: {Image(systemName: "slider.horizontal.3").foregroundColor(isDark ? .gray : .blue)}))
+            .navigationBarItems(trailing: NavigationLink(destination: AboutAppView(), label: {Image(systemName: animatedButton ? "info.circle": "info.circle.fill").foregroundColor(isDark ? .teal : .blue).shadow(color: isDark ? .black : .blue, radius: animatedButton ? 10 : 35, x:0, y: animatedButton ? 10 : 0).scaleEffect(animatedButton ? 1.2 : 1.0)}))
             .navigationBarItems(leading: Button(action:{
                 HapticEngine.impact.imapct(style: .medium)
                 isDark.toggle()

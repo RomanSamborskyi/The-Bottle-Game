@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		6B979A4428A83648001A97C4 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979A4328A83648001A97C4 /* AboutAppView.swift */; };
 		6B9848AB28A2D1370039B650 /* StartAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9848AA28A2D1370039B650 /* StartAppView.swift */; };
-		6BF385AC28EDFCAF0021C20C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF385AB28EDFCAF0021C20C /* SettingsView.swift */; };
-		6BF385B028EE0C840021C20C /* AlternativeAppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF385AF28EE0C840021C20C /* AlternativeAppIcon.swift */; };
 		6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */; };
 		6BF8A06228971FFD00B47E37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8A06128971FFD00B47E37 /* ContentView.swift */; };
 		6BF8A06428971FFE00B47E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A06328971FFE00B47E37 /* Assets.xcassets */; };
@@ -40,8 +38,6 @@
 /* Begin PBXFileReference section */
 		6B979A4328A83648001A97C4 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
 		6B9848AA28A2D1370039B650 /* StartAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppView.swift; sourceTree = "<group>"; };
-		6BF385AB28EDFCAF0021C20C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		6BF385AF28EE0C840021C20C /* AlternativeAppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeAppIcon.swift; sourceTree = "<group>"; };
 		6BF8A05C28971FFD00B47E37 /* Bottle Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bottle Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottle_GameApp.swift; sourceTree = "<group>"; };
 		6BF8A06128971FFD00B47E37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,20 +75,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6B979A4228A8339C001A97C4 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				6B979A4328A83648001A97C4 /* AboutAppView.swift */,
-				6BF385AB28EDFCAF0021C20C /* SettingsView.swift */,
-				6BF385AF28EE0C840021C20C /* AlternativeAppIcon.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		6BF385A828EDF90F0021C20C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6B979A4228A8339C001A97C4 /* Settings */,
+				6B979A4328A83648001A97C4 /* AboutAppView.swift */,
 				6B9848AA28A2D1370039B650 /* StartAppView.swift */,
 				6BF8A06128971FFD00B47E37 /* ContentView.swift */,
 			);
@@ -285,11 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BF385AC28EDFCAF0021C20C /* SettingsView.swift in Sources */,
 				6B979A4428A83648001A97C4 /* AboutAppView.swift in Sources */,
 				6BF8A06228971FFD00B47E37 /* ContentView.swift in Sources */,
 				6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */,
-				6BF385B028EE0C840021C20C /* AlternativeAppIcon.swift in Sources */,
 				6B9848AB28A2D1370039B650 /* StartAppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,11 +438,12 @@
 				DEVELOPMENT_TEAM = 7X87RPFKRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bottle-Game-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleBlackTranslucent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,11 +473,12 @@
 				DEVELOPMENT_TEAM = 7X87RPFKRJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Bottle-Game-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleBlackTranslucent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

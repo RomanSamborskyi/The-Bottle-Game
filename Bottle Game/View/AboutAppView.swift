@@ -49,7 +49,7 @@ struct AboutAppView: View {
                             HapticEngine.impact.imapct(style: .medium)
                             //
                         }){
-                            ZStack{
+                            ZStack{ 
                                 RoundedRectangle(cornerRadius: 12)
                                     .stroke(lineWidth: 3)
                                     .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
@@ -90,7 +90,6 @@ struct AboutAppView: View {
 struct AboutAppView_Previews: PreviewProvider {
     static var previews: some View {
         AboutAppView()
-                .preferredColorScheme(.light)
     }
 }
 
