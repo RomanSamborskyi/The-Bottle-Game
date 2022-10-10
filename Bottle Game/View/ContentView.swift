@@ -20,7 +20,6 @@ struct ContentView: View {
     @State private var isRotated = 0.0
     @State var showSettings: Bool = false
     @State var animatedButton: Bool = false
-    @Environment (\.colorScheme) var colorScheme
     @AppStorage("isDark") private var isDark = false
     
     var body: some View {
@@ -73,7 +72,7 @@ struct ContentView: View {
         }
             .navigationTitle("")
         // Dark mode switch button in navBar
-            .navigationBarItems(trailing: NavigationLink(destination: AboutAppView(), label: {Image(systemName: animatedButton ? "info.circle": "info.circle.fill").foregroundColor(isDark ? .teal : .blue).shadow(color: isDark ? .black : .blue, radius: animatedButton ? 10 : 35, x:0, y: animatedButton ? 10 : 0).scaleEffect(animatedButton ? 1.2 : 1.0)}))
+            .navigationBarItems(trailing: NavigationLink(destination: SettingsView(), label: {Image(systemName: "slider.horizontal.3").foregroundColor(isDark ? .purple : .blue)}))
             .navigationBarItems(leading: Button(action:{
                 HapticEngine.impact.imapct(style: .medium)
                 isDark.toggle()
@@ -81,9 +80,7 @@ struct ContentView: View {
                 Text(Image(systemName: isDark ? "moon.fill":"sun.max.fill"))
                     .foregroundColor(isDark ? Color.purple : Color.yellow)
             }.buttonStyle(.bordered).tint(isDark ? .gray : .blue))
-            .environment(\.colorScheme, isDark ? .dark : .light)
     }
-    // animation func
     func animatedBuuton(){
         guard !animatedButton else {return}
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){

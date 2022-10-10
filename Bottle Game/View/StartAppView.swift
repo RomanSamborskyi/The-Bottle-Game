@@ -13,12 +13,10 @@ struct StartAppView: View {
     @State private var changeView = false
     @State private var isRottated = true
     @State private var isRottate:Int = 0
-    @Environment (\.colorScheme) var colorScheme
     @AppStorage("isDark") private var isDark = false
     
     var body: some View {
-        
-            if isRottate >= 3{
+            if isRottate <= 3{
                 ContentView()
             }else{
                 ZStack{
@@ -52,7 +50,7 @@ struct StartAppView: View {
                             withAnimation(Animation.linear(duration: 1).delay(1).repeatCount(1))
                             {self.strokeEndAnimation.toggle(); isRottate += 1}
                         }
-                }.environment(\.colorScheme, isDark ? .dark : .light)
+                }
             }
         }
     }

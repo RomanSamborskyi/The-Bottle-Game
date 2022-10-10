@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AboutAppView: View {
     @State var animatedButton : Bool = false
-    @Environment (\.colorScheme) var colorScheme
+    //@Environment (\.colorScheme) var colorScheme
     @AppStorage("isDark") private var isDark = false
     var body: some View {
             ZStack{
@@ -75,7 +75,7 @@ struct AboutAppView: View {
                         Spacer()
                     }.onAppear(perform: animatedButtonFunc)
                 }
-            }.environment(\.colorScheme, isDark ? .dark : .light)
+            }//.environment(\.colorScheme, isDark ? .dark : .light)
         }
     func animatedButtonFunc(){
         guard !animatedButton else {return}
