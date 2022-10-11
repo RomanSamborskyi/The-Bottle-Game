@@ -72,7 +72,7 @@ struct ContentView: View {
         }
             .navigationTitle("")
         // Dark mode switch button in navBar
-            .navigationBarItems(trailing: NavigationLink(destination: SettingsView(), label: {Image(systemName: "slider.horizontal.3").foregroundColor(isDark ? .purple : .blue)}))
+            .navigationBarItems(trailing: NavigationLink(destination: SettingsView(), label: {Image(systemName: "slider.horizontal.3").foregroundColor(isDark ? .purple : .blue)}).buttonStyle(.bordered).tint(isDark ? .gray : .blue))
             .navigationBarItems(leading: Button(action:{
                 HapticEngine.impact.imapct(style: .medium)
                 isDark.toggle()

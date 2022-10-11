@@ -23,7 +23,7 @@ struct SettingsView: View {
                     NavigationLink("Alternate App Icon", destination: AlternateIconView())
                 }
             }
-        }.navigationTitle("Settings")
+        }.navigationTitle("Settings").navigationBarTitleDisplayMode(.automatic)
     }
 }
 

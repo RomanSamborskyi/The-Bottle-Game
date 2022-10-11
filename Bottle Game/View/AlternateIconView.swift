@@ -23,9 +23,7 @@ class IconNames: ObservableObject {
     func getAlternateIconNames(){
     //looking into our info.plist file to locate the specific Bundle with our icons
             if let icons = Bundle.main.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],
-                let alternateIcons = icons["CFBundleAlternateIcons"] as? [String: Any]
-            {
-                     
+                let alternateIcons = icons["CFBundleAlternateIcons"] as? [String: Any]{
                  for (_, value) in alternateIcons{
                     //Accessing the name of icon list inside the dictionary
                      guard let iconList = value as? Dictionary<String,Any> else{return}
@@ -35,7 +33,6 @@ class IconNames: ObservableObject {
                          //Accessing the name of the icon
                      guard let icon = iconFiles.first else{return}
                      iconNames.append(icon)
-        
                  }
             }
     }
@@ -52,6 +49,7 @@ struct AlternateIconView: View {
                             .resizable()
                             .renderingMode(.original)
                             .frame(width: 50, height: 50, alignment: .leading)
+                            .cornerRadius(10)
                     }
                 }.onReceive([self.iconSettings.currentIndex].publisher.first()){ value in
                     let i = self.iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName) ?? 0

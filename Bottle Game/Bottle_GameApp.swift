@@ -11,14 +11,23 @@ import SwiftUI
 struct Bottle_GameApp: App {
     @Environment (\.colorScheme) var colorScheme
     @AppStorage("isDark") private var isDark = false
+    @State private var showLaunchScreen: Bool = true
     
     var body: some Scene {
             WindowGroup {
-                NavigationView{
-                    StartAppView()
-                }.navigationViewStyle(StackNavigationViewStyle())
-                .environment(\.colorScheme, isDark ? .dark : .light)
-                .environmentObject(IconNames())
+                ZStack{
+                    NavigationView{
+                       ContentView()
+                    }.navigationViewStyle(StackNavigationViewStyle())
+                    .environment(\.colorScheme, isDark ? .dark : .light)
+                    .environmentObject(IconNames())
+                    ZStack{
+                        if showLaunchScreen {
+                            StartAppView(showLaunchScreen: $showLaunchScreen)
+                                .transition(.opacity)
+                        }
+                    }.zIndex(2.0)
+                }
         }
     }
 }
