@@ -10,9 +10,10 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("isDark") var isDark = false
     var body: some View {
+        ZStack{
         VStack{
             List{
-            Section("dark/mode"){
+                Section("dark/mode"){
                     Picker("",selection: $isDark){
                         Text("dark").tag(true)
                         Text("light").tag(false)
@@ -23,6 +24,9 @@ struct SettingsView: View {
                     NavigationLink("Alternate App Icon", destination: AlternateIconView())
                 }
             }
+            Spacer()
+            Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi").foregroundColor(Color.gray)
+          }
         }.navigationTitle("Settings").navigationBarTitleDisplayMode(.automatic)
     }
 }
