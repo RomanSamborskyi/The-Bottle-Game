@@ -11,22 +11,24 @@ struct SettingsView: View {
     @AppStorage("isDark") var isDark = false
     var body: some View {
         ZStack{
-        VStack{
-            List{
-                Section("dark/mode"){
-                    Picker("",selection: $isDark){
-                        Text("dark").tag(true)
-                        Text("light").tag(false)
-                    }.pickerStyle(.segmented)
+            VStack{
+                List{
+                    Section("dark/mode"){
+                        Picker("",selection: $isDark){
+                            Text("dark").tag(true)
+                            Text("light").tag(false)
+                        }.pickerStyle(.segmented)
+                    }.listRowBackground(isDark ? Color("ColorOfList"): .white)
+                    Section("other"){
+                        NavigationLink("About app",destination: AboutAppView())
+                        NavigationLink("Alternate App Icon", destination: AlternateIconView())
+                    }.listRowBackground(isDark ? Color("ColorOfList"): .white)
                 }
-                Section("other"){
-                    NavigationLink("About app",destination: AboutAppView())
-                    NavigationLink("Alternate App Icon", destination: AlternateIconView())
-                }
+              }
+            VStack{
+                Spacer()
+                Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi").foregroundColor(Color.gray)
             }
-            Spacer()
-            Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi").foregroundColor(Color.gray)
-          }
         }.navigationTitle("Settings").navigationBarTitleDisplayMode(.automatic)
     }
 }

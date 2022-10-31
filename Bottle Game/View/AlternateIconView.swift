@@ -38,18 +38,18 @@ class IconNames: ObservableObject {
     }
 }
 struct AlternateIconView: View {
+    @AppStorage("isDark") var isDark = false
     @EnvironmentObject var iconSettings:IconNames
     var body: some View {
         Form{
             Picker(selection: $iconSettings.currentIndex,label:Text("Icons")){
                 ForEach(0 ..< iconSettings.iconNames.count, id: \.self){i in
                     HStack(spacing:20){
-                        Text(self.iconSettings.iconNames[i] ?? "AppIcon")
-                        Image(uiImage: UIImage(named: self.iconSettings.iconNames[i] ?? "AppIcon") ?? UIImage())
-                            .resizable()
-                            .renderingMode(.original)
-                            .frame(width: 50, height: 50, alignment: .leading)
-                            .cornerRadius(10)
+                            Image(uiImage: UIImage(named: self.iconSettings.iconNames[i] ?? "AppIcon") ?? UIImage())
+                                .resizable()
+                                .renderingMode(.original)
+                                .frame(width: 50, height: 50, alignment: .leading)
+                                .cornerRadius(10)
                     }
                 }.onReceive([self.iconSettings.currentIndex].publisher.first()){ value in
                     let i = self.iconSettings.iconNames.firstIndex(of: UIApplication.shared.alternateIconName) ?? 0

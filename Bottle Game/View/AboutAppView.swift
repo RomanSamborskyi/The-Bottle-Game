@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AboutAppView: View {
     @State var animatedButton : Bool = false
-    //@Environment (\.colorScheme) var colorScheme
+    @State private var ifPayed: Bool = true
     @AppStorage("isDark") private var isDark = false
     var body: some View {
             ZStack{
@@ -47,6 +47,7 @@ struct AboutAppView: View {
                         
                         Button(action:{
                             HapticEngine.impact.imapct(style: .medium)
+                            ifPayed.toggle()
                             //
                         }){
                             ZStack{ 
@@ -55,10 +56,9 @@ struct AboutAppView: View {
                                     .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                                     .frame(width: 110, height: 55, alignment: .center)
                                 
-                                Text("$ 1.00")
+                                Text(ifPayed ? "$ 1.09" : "\(Image(systemName: "cup.and.saucer.fill"))")
                                     .font(.body)
                                     .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
-                                    .bold()
                             }.shadow(color: isDark ? .black : .blue, radius: animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
                                 .scaleEffect(animatedButton ? 1.15 : 1.0)
                         }.padding(20)
@@ -75,7 +75,7 @@ struct AboutAppView: View {
                         Spacer()
                     }.onAppear(perform: animatedButtonFunc)
                 }
-            }//.environment(\.colorScheme, isDark ? .dark : .light)
+            }
         }
     func animatedButtonFunc(){
         guard !animatedButton else {return}
