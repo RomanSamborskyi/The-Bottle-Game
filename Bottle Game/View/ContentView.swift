@@ -65,7 +65,7 @@ struct ContentView: View {
             }.onAppear(perform: animatedBuuton)
             VStack{
                 Spacer()
-
+                           
                     Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
                         .foregroundColor(Color.gray)
             }

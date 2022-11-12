@@ -27,6 +27,11 @@ struct SettingsView: View {
               }
             VStack{
                 Spacer()
+                Image("BottleGray")
+                    .resizable()
+                    .frame(width: 80,height:60 )
+                Text("The Bottle game  v.1.0.1").foregroundColor(Color.gray)
+                    .padding(.vertical, 5)
                 Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi").foregroundColor(Color.gray)
             }
         }.navigationTitle("Settings").navigationBarTitleDisplayMode(.automatic)

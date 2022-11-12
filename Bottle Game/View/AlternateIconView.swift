@@ -64,9 +64,9 @@ struct AlternateIconView: View {
                         })
                     }
                 }
-            }.pickerStyle(.inline)
+            }.pickerStyle(.inline).listRowBackground(isDark ? Color("ColorOfList"): .white)
             .navigationBarTitle("Change App Icon",displayMode: .inline)
-        }
+        }.listRowBackground(isDark ? Color("ColorOfList"): .white)
     }
 }
 

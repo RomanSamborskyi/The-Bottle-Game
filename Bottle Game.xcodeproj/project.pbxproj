@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B278692291C4BE000321C01 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B278691291C4BE000321C01 /* black.png */; };
+		6B4BC7E7291FEB0C00433506 /* blue1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BC7E5291FEB0C00433506 /* blue1.png */; };
+		6B4BC7E8291FEB0C00433506 /* blue2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BC7E6291FEB0C00433506 /* blue2.png */; };
 		6B979A4428A83648001A97C4 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979A4328A83648001A97C4 /* AboutAppView.swift */; };
 		6B9848AB28A2D1370039B650 /* StartAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9848AA28A2D1370039B650 /* StartAppView.swift */; };
 		6B98547D28F49227009086A7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B98547C28F49227009086A7 /* SettingsView.swift */; };
 		6B98547F28F49501009086A7 /* AlternateIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B98547E28F49501009086A7 /* AlternateIconView.swift */; };
 		6B98548728F499A9009086A7 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B98548528F499A9009086A7 /* red.png */; };
-		6B98548828F499A9009086A7 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B98548628F499A9009086A7 /* blue.png */; };
 		6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */; };
 		6BF8A06228971FFD00B47E37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8A06128971FFD00B47E37 /* ContentView.swift */; };
 		6BF8A06428971FFE00B47E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A06328971FFE00B47E37 /* Assets.xcassets */; };
@@ -40,12 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B278691291C4BE000321C01 /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
+		6B4BC7E5291FEB0C00433506 /* blue1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue1.png; sourceTree = "<group>"; };
+		6B4BC7E6291FEB0C00433506 /* blue2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue2.png; sourceTree = "<group>"; };
 		6B979A4328A83648001A97C4 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
 		6B9848AA28A2D1370039B650 /* StartAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppView.swift; sourceTree = "<group>"; };
 		6B98547C28F49227009086A7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6B98547E28F49501009086A7 /* AlternateIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternateIconView.swift; sourceTree = "<group>"; };
 		6B98548528F499A9009086A7 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
-		6B98548628F499A9009086A7 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
 		6BF8A05C28971FFD00B47E37 /* Bottle Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bottle Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottle_GameApp.swift; sourceTree = "<group>"; };
 		6BF8A06128971FFD00B47E37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,8 +90,10 @@
 		6B98548028F496C6009086A7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				6B98548628F499A9009086A7 /* blue.png */,
 				6B98548528F499A9009086A7 /* red.png */,
+				6B4BC7E5291FEB0C00433506 /* blue1.png */,
+				6B4BC7E6291FEB0C00433506 /* blue2.png */,
+				6B278691291C4BE000321C01 /* black.png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -265,10 +271,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B4BC7E7291FEB0C00433506 /* blue1.png in Resources */,
 				6B98548728F499A9009086A7 /* red.png in Resources */,
+				6B4BC7E8291FEB0C00433506 /* blue2.png in Resources */,
+				6B278692291C4BE000321C01 /* black.png in Resources */,
 				6BF8A06728971FFE00B47E37 /* Preview Assets.xcassets in Resources */,
 				6BF8A06428971FFE00B47E37 /* Assets.xcassets in Resources */,
-				6B98548828F499A9009086A7 /* blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +482,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.landmark.Bottle-Game-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -509,7 +517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.landmark.Bottle-Game-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
