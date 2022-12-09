@@ -56,7 +56,7 @@ struct AboutAppView: View {
                                     .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                                     .frame(width: 110, height: 55, alignment: .center)
                                 
-                                Text(ifPayed ? "$ 1.09" : "\(Image(systemName: "cup.and.saucer.fill"))")
+                                Text(ifPayed ? "$ 1.19" : "\(Image(systemName: "cup.and.saucer.fill"))")
                                     .font(.body)
                                     .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
                             }.shadow(color: isDark ? .black : .blue, radius: animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
