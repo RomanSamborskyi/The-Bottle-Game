@@ -15,6 +15,8 @@
 		6B98547D28F49227009086A7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B98547C28F49227009086A7 /* SettingsView.swift */; };
 		6B98547F28F49501009086A7 /* AlternateIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B98547E28F49501009086A7 /* AlternateIconView.swift */; };
 		6B98548728F499A9009086A7 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B98548528F499A9009086A7 /* red.png */; };
+		6BC93E592943F37800F2D680 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 6BC93E582943F37800F2D680 /* RevenueCat */; };
+		6BC93E5B2943F3AF00F2D680 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC93E5A2943F3AF00F2D680 /* Secret.swift */; };
 		6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */; };
 		6BF8A06228971FFD00B47E37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8A06128971FFD00B47E37 /* ContentView.swift */; };
 		6BF8A06428971FFE00B47E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A06328971FFE00B47E37 /* Assets.xcassets */; };
@@ -50,6 +52,7 @@
 		6B98547C28F49227009086A7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6B98547E28F49501009086A7 /* AlternateIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternateIconView.swift; sourceTree = "<group>"; };
 		6B98548528F499A9009086A7 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		6BC93E5A2943F3AF00F2D680 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		6BF8A05C28971FFD00B47E37 /* Bottle Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bottle Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottle_GameApp.swift; sourceTree = "<group>"; };
 		6BF8A06128971FFD00B47E37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC93E592943F37800F2D680 /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +142,7 @@
 				6B98548028F496C6009086A7 /* Icons */,
 				6BF8A06328971FFE00B47E37 /* Assets.xcassets */,
 				6BF8A06528971FFE00B47E37 /* Preview Content */,
+				6BC93E5A2943F3AF00F2D680 /* Secret.swift */,
 			);
 			path = "Bottle Game";
 			sourceTree = "<group>";
@@ -183,6 +188,9 @@
 			dependencies = (
 			);
 			name = "Bottle Game";
+			packageProductDependencies = (
+				6BC93E582943F37800F2D680 /* RevenueCat */,
+			);
 			productName = "Bottle Game";
 			productReference = 6BF8A05C28971FFD00B47E37 /* Bottle Game.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +263,9 @@
 				Base,
 			);
 			mainGroup = 6BF8A05328971FFD00B47E37;
+			packageReferences = (
+				6BC93E572943F37800F2D680 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
 			productRefGroup = 6BF8A05D28971FFD00B47E37 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B98547D28F49227009086A7 /* SettingsView.swift in Sources */,
+				6BC93E5B2943F3AF00F2D680 /* Secret.swift in Sources */,
 				6B979A4428A83648001A97C4 /* AboutAppView.swift in Sources */,
 				6BF8A06228971FFD00B47E37 /* ContentView.swift in Sources */,
 				6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */,
@@ -645,6 +657,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6BC93E572943F37800F2D680 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6BC93E582943F37800F2D680 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BC93E572943F37800F2D680 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6BF8A05428971FFD00B47E37 /* Project object */;
 }

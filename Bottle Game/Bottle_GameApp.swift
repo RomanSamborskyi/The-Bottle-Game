@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import RevenueCat
+
+
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    
+}
 
 @main
 struct Bottle_GameApp: App {
     @Environment (\.colorScheme) var colorScheme
     @AppStorage("isDark") private var isDark = false
     @State private var showLaunchScreen: Bool = true
+    
     
     var body: some Scene {
             WindowGroup {
