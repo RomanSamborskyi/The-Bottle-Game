@@ -21,7 +21,7 @@ struct ContentView: View {
     @State var showSettings: Bool = false
     @State var animatedButton: Bool = false
     @AppStorage("isDark") private var isDark = false
-    
+    @State var paywallPresented: Bool = false 
     var body: some View {
         ZStack{
             //Background gradient
@@ -89,6 +89,7 @@ struct ContentView: View {
             }
         }
     }
+    
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

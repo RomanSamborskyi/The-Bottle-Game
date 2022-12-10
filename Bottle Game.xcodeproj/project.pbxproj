@@ -10,6 +10,9 @@
 		6B278692291C4BE000321C01 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B278691291C4BE000321C01 /* black.png */; };
 		6B4BC7E7291FEB0C00433506 /* blue1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BC7E5291FEB0C00433506 /* blue1.png */; };
 		6B4BC7E8291FEB0C00433506 /* blue2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BC7E6291FEB0C00433506 /* blue2.png */; };
+		6B6977DB2944F05000A975E4 /* PurchasesDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6977DA2944F05000A975E4 /* PurchasesDelegateHandler.swift */; };
+		6B6977DF2944F1EC00A975E4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6977DE2944F1EC00A975E4 /* UserViewModel.swift */; };
+		6B6977E12945137C00A975E4 /* PayWallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6977E02945137C00A975E4 /* PayWallView.swift */; };
 		6B979A4428A83648001A97C4 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B979A4328A83648001A97C4 /* AboutAppView.swift */; };
 		6B9848AB28A2D1370039B650 /* StartAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9848AA28A2D1370039B650 /* StartAppView.swift */; };
 		6B98547D28F49227009086A7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B98547C28F49227009086A7 /* SettingsView.swift */; };
@@ -47,6 +50,10 @@
 		6B278691291C4BE000321C01 /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
 		6B4BC7E5291FEB0C00433506 /* blue1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue1.png; sourceTree = "<group>"; };
 		6B4BC7E6291FEB0C00433506 /* blue2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue2.png; sourceTree = "<group>"; };
+		6B6977DA2944F05000A975E4 /* PurchasesDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesDelegateHandler.swift; sourceTree = "<group>"; };
+		6B6977DE2944F1EC00A975E4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		6B6977E02945137C00A975E4 /* PayWallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallView.swift; sourceTree = "<group>"; };
+		6B6977E2294517E100A975E4 /* Bottle Game.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Bottle Game.entitlements"; sourceTree = "<group>"; };
 		6B979A4328A83648001A97C4 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
 		6B9848AA28A2D1370039B650 /* StartAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppView.swift; sourceTree = "<group>"; };
 		6B98547C28F49227009086A7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -91,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B6977DD2944F1AF00A975E4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6B6977DA2944F05000A975E4 /* PurchasesDelegateHandler.swift */,
+				6B6977DE2944F1EC00A975E4 /* UserViewModel.swift */,
+				6BC93E5A2943F3AF00F2D680 /* Secret.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		6B98548028F496C6009086A7 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +125,7 @@
 				6B979A4328A83648001A97C4 /* AboutAppView.swift */,
 				6B9848AA28A2D1370039B650 /* StartAppView.swift */,
 				6B98547C28F49227009086A7 /* SettingsView.swift */,
+				6B6977E02945137C00A975E4 /* PayWallView.swift */,
 				6B98547E28F49501009086A7 /* AlternateIconView.swift */,
 				6BF8A06128971FFD00B47E37 /* ContentView.swift */,
 			);
@@ -137,12 +155,13 @@
 		6BF8A05E28971FFD00B47E37 /* Bottle Game */ = {
 			isa = PBXGroup;
 			children = (
+				6B6977E2294517E100A975E4 /* Bottle Game.entitlements */,
 				6BF8A05F28971FFD00B47E37 /* Bottle_GameApp.swift */,
 				6BF385A828EDF90F0021C20C /* View */,
 				6B98548028F496C6009086A7 /* Icons */,
+				6B6977DD2944F1AF00A975E4 /* Helpers */,
 				6BF8A06328971FFE00B47E37 /* Assets.xcassets */,
 				6BF8A06528971FFE00B47E37 /* Preview Content */,
-				6BC93E5A2943F3AF00F2D680 /* Secret.swift */,
 			);
 			path = "Bottle Game";
 			sourceTree = "<group>";
@@ -312,12 +331,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B6977DB2944F05000A975E4 /* PurchasesDelegateHandler.swift in Sources */,
 				6B98547D28F49227009086A7 /* SettingsView.swift in Sources */,
 				6BC93E5B2943F3AF00F2D680 /* Secret.swift in Sources */,
 				6B979A4428A83648001A97C4 /* AboutAppView.swift in Sources */,
 				6BF8A06228971FFD00B47E37 /* ContentView.swift in Sources */,
 				6BF8A06028971FFD00B47E37 /* Bottle_GameApp.swift in Sources */,
 				6B98547F28F49501009086A7 /* AlternateIconView.swift in Sources */,
+				6B6977E12945137C00A975E4 /* PayWallView.swift in Sources */,
+				6B6977DF2944F1EC00A975E4 /* UserViewModel.swift in Sources */,
 				6B9848AB28A2D1370039B650 /* StartAppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +497,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Bottle Game/Bottle Game.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -510,6 +533,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Bottle Game/Bottle Game.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

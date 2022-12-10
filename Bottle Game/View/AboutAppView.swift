@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
-
+import RevenueCat
+import UIKit
+/**
+ VStack{
+     ForEach(offerings?.availablePackages ?? []) { packages in
+         mainView(package: packages)
+     }
+ 
+ 
+ */
 struct AboutAppView: View {
     @State var animatedButton : Bool = false
-    @State private var ifPayed: Bool = true
     @AppStorage("isDark") private var isDark = false
     var body: some View {
             ZStack{
@@ -47,18 +55,11 @@ struct AboutAppView: View {
                         
                         Button(action:{
                             HapticEngine.impact.imapct(style: .medium)
-                            ifPayed.toggle()
+                          
                             //
                         }){
-                            ZStack{ 
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(lineWidth: 3)
-                                    .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
-                                    .frame(width: 110, height: 55, alignment: .center)
-                                
-                                Text(ifPayed ? "$ 1.19" : "\(Image(systemName: "cup.and.saucer.fill"))")
-                                    .font(.body)
-                                    .foregroundColor(Color.init(red: 0.4, green: 11, blue: 4, opacity: 0.2))
+                            ZStack{
+                              PayWallView()
                             }.shadow(color: isDark ? .black : .blue, radius: animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
                                 .scaleEffect(animatedButton ? 1.15 : 1.0)
                         }.padding(20)
@@ -84,7 +85,7 @@ struct AboutAppView: View {
                 animatedButton.toggle()
             }
         }
-    }
+      }
 }
 
 struct AboutAppView_Previews: PreviewProvider {

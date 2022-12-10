@@ -22,6 +22,7 @@ struct SettingsView: View {
                     Section("other"){
                         NavigationLink("About app",destination: AboutAppView())
                         NavigationLink("Alternate App Icon", destination: AlternateIconView())
+                        //NavigationLink("PayWall", destination: PayWallView())
                     }.listRowBackground(isDark ? Color("ColorOfList"): .white)
                 }
               }
