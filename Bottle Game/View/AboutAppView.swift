@@ -7,15 +7,8 @@
 
 import SwiftUI
 import RevenueCat
-import UIKit
-/**
- VStack{
-     ForEach(offerings?.availablePackages ?? []) { packages in
-         mainView(package: packages)
-     }
- 
- 
- */
+
+
 struct AboutAppView: View {
     @State var animatedButton : Bool = false
     @AppStorage("isDark") private var isDark = false
@@ -53,16 +46,13 @@ struct AboutAppView: View {
                             .bold()
                             .padding()
                         
-                        Button(action:{
-                            HapticEngine.impact.imapct(style: .medium)
-                          
-                            //
-                        }){
+                      
                             ZStack{
                               PayWallView()
                             }.shadow(color: isDark ? .black : .blue, radius: animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
                                 .scaleEffect(animatedButton ? 1.15 : 1.0)
-                        }.padding(20)
+                                .padding(20)
+                     
                         
                         
                         Text("Also you can connect with me by email 📧")
