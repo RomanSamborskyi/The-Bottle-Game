@@ -24,6 +24,7 @@ struct ContentView: View {
     @State var paywallPresented: Bool = false 
     var body: some View {
         ZStack{
+            
             //Background gradient
             LinearGradient(gradient: isDark ? Gradient(colors: [
                 Color.black,
@@ -37,7 +38,7 @@ struct ContentView: View {
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing
             ).ignoresSafeArea(.all,edges: .all)
-            
+            SnowView()
             VStack{
                 Image("bottle")
                     .resizable()
@@ -69,6 +70,7 @@ struct ContentView: View {
                     Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi")
                         .foregroundColor(Color.gray)
             }
+            
         }
             .navigationTitle("")
         // Dark mode switch button in navBar

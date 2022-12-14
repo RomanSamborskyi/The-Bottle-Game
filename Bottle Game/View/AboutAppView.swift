@@ -46,15 +46,12 @@ struct AboutAppView: View {
                             .bold()
                             .padding()
                         
-                      
-                            ZStack{
+                        ZStack{
                               PayWallView()
                             }.shadow(color: isDark ? .black : .blue, radius: animatedButton ? 10 : 35, x: 0, y: animatedButton ? 30 : 0)
                                 .scaleEffect(animatedButton ? 1.15 : 1.0)
                                 .padding(20)
                      
-                        
-                        
                         Text("Also you can connect with me by email 📧")
                             .font(.body)
                             .foregroundColor(Color.black)

@@ -52,6 +52,7 @@ struct mainView: View{
             }.contentShape(Rectangle())
                 .onTapGesture {
                     onSelection(package)
+                    HapticEngine.impact.imapct(style: .light)
                 }
         }
     }
