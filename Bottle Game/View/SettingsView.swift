@@ -9,15 +9,20 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("isDark") var isDark = false
+    @AppStorage("Let it snow") private var letItSnow = false
     var body: some View {
         ZStack{
             VStack{
                 List{
-                    Section("dark/mode"){
-                        Picker("",selection: $isDark){
-                            Text("dark").tag(true)
-                            Text("light").tag(false)
-                        }.pickerStyle(.segmented)
+                    Section("Appearance"){
+                        Toggle(isOn: $isDark) {
+                            Text("Dark mode off/on")
+                        }
+                    }.listRowBackground(isDark ? Color("ColorOfList"): .white)
+                    Section("Let it snow"){
+                        Toggle(isOn: $letItSnow) {
+                            Text("Turn off/on the winter mode")
+                        }
                     }.listRowBackground(isDark ? Color("ColorOfList"): .white)
                     Section("other"){
                         NavigationLink("About app",destination: AboutAppView())
@@ -31,7 +36,7 @@ struct SettingsView: View {
                 Image("BottleGray")
                     .resizable()
                     .frame(width: 80,height:60 )
-                Text("The Bottle game  v.1.0.1").foregroundColor(Color.gray)
+                Text("The Bottle game  v.1.0.4").foregroundColor(Color.gray)
                     .padding(.vertical, 5)
                 Text("made with \(Image(systemName: "heart.fill")) by @RomanSamborskyi").foregroundColor(Color.gray)
             }

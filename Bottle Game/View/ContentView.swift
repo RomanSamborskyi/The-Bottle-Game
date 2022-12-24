@@ -21,6 +21,7 @@ struct ContentView: View {
     @State var showSettings: Bool = false
     @State var animatedButton: Bool = false
     @AppStorage("isDark") private var isDark = false
+    @AppStorage("Let it snow") private var letItSnow = false 
     @State var paywallPresented: Bool = false 
     var body: some View {
         ZStack{
@@ -38,7 +39,9 @@ struct ContentView: View {
                            startPoint: .topLeading,
                            endPoint: .bottomTrailing
             ).ignoresSafeArea(.all,edges: .all)
-            SnowView()
+            if letItSnow{
+                SnowView()
+            }
             VStack{
                 Image("bottle")
                     .resizable()
@@ -48,7 +51,7 @@ struct ContentView: View {
                 //Rotate button of bottle
                 Button(action:{
                     HapticEngine.impact.imapct(style: .medium) // vibrate
-                    let d = Double.random(in: 720...7200) // random stop of animation
+                    let d = Double.random(in: 720...5760) // random stop of animation
                     let baseAnimation = Animation.easeInOut(duration: d / 660)
                     withAnimation (baseAnimation) {
                         self.isRotated += d

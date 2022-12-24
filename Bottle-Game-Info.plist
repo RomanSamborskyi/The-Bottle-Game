@@ -35,28 +35,6 @@
 				</array>
 			</dict>
 		</dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>Default</string>
-			</array>
-			<key>CFBundleIconName</key>
-			<string></string>
-			<key>UIPrerenderedIcon</key>
-			<false/>
-		</dict>
-		<key>UINewsstandIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string></string>
-			</array>
-			<key>UINewsstandBindingEdge</key>
-			<string>UINewsstandBindingEdgeLeft</string>
-			<key>UINewsstandBindingType</key>
-			<string>UINewsstandBindingTypeMagazine</string>
-		</dict>
 	</dict>
 	<key>UILaunchScreens</key>
 	<dict>
@@ -75,7 +53,7 @@
 		<dict/>
 	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+	<true/>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict/>
